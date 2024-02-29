@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>JavaScript Assignment 4</title>
+</head>
+<body>
+	<script>
+function verifyServiceQuality(quality) {
+    if (quality.toLowerCase() === 'great' || quality.toLowerCase() === 'ok' || quality.toLowerCase() === 'poor') {
+        return true;
+    } else {
+        alert("Please enter a valid service quality (great, ok, or poor).");
+        return false;
+    }
+}
+
+function verifyServiceAmount(amount) {
+    if (amount >= 5.00 && amount <= 500.00) {
+        return true;
+    } else {
+        alert("Please enter a valid service amount between $5.00 and $500.00.");
+        return false;
+    }
+}
+
+function calculateTip(amount, quality) {
+    if (quality.toLowerCase() === 'great') {
+        return amount * 0.20;
+    } else if (quality.toLowerCase() === 'ok') {
+        return amount * 0.15;
+    } else {
+        return amount * 0.10;
+    }
+}
+
+function main() {
+    var serviceAmount = parseFloat(prompt("Enter the dollar amount of the service: $"));
+    if (!verifyServiceAmount(serviceAmount)) {
+        return;
+    }
+
+    var serviceQuality = prompt("Was the service quality great, ok, or poor?");
+    if (!verifyServiceQuality(serviceQuality)) {
+        return;
+    }
+
+    var tip = calculateTip(serviceAmount, serviceQuality);
+    alert("For a service amount of $" + serviceAmount.toFixed(2) + " and " +
+        serviceQuality + " service quality, the recommended tip is $" + tip.toFixed(2) + ".");
+}
+</script>
+	<button onclick="main()">Calculate Tip</button>
+	<p>Hello, welcome to my first JavaScript webpage! Please click Calculate Tip button.</p>
+	<p>
+		<script>document.write("A few fun facts about myself is that I have a Pomsky named Mak, I am a triplet, and I love to learn new things.");</script>
+	</p>
+	<p>
+		<em>Learning to code and all the fundamentals that go with it, is an exciting journey to be on.</em>
+	</p>
+
+<script>
+
+function changeBackground(color) {
+  document.body.style.background = color;
+}
+window.addEventListener("load",function() { changeBackground('blue') });
+</script>
+</body>
+</html>
